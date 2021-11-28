@@ -1,0 +1,17 @@
+using System;
+
+namespace calculator_app
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            Calculator c = new Calculator();
+            c.calculation();
+        }
+
+    }
+    
+}
