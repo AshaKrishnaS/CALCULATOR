@@ -1,0 +1,126 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace calculator_app
+{
+    class Calculator
+    {
+
+        
+
+            public void calculation()
+            {
+           
+            bool i = true;
+            while (i)
+            {
+                Console.WriteLine("CALCULATOR");
+                Console.WriteLine("____________________________________");
+
+                int firstnumber, secondnumber, result;
+                Console.WriteLine("ENTER FIRST NUMBER");
+                firstnumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ENTER SECOND NUMBER");
+                secondnumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("____________________________________");
+
+                Console.WriteLine(" CHOOSE AN OPERATION");
+
+                Console.WriteLine("0.EXIT");
+                Console.WriteLine("1.ADDITION");
+                Console.WriteLine("2.SUBSTRACTION");
+                Console.WriteLine("3.MULTIPLICATION");
+                Console.WriteLine("4.DIVISION");
+                Console.WriteLine("5.CLEAR");
+
+                try
+                {
+                    int operation = Convert.ToInt32(Console.ReadLine());
+
+                    
+
+                    if (operation == 0)
+                    {
+                        Environment.Exit(0);
+                    }
+
+                    else if (operation == 5)
+                    {
+                        Console.Clear();
+                    }
+                    else
+                    {
+
+                        if (operation == 1)
+                        {
+                            addition();
+                        }
+                        else if (operation == 2)
+                        {
+                            substraction();
+                        }
+                        else if (operation == 3)
+                        {
+                            multiplication();
+                        }
+                        else if (operation == 4)
+                        {
+
+                            if (secondnumber == 0)
+                            {
+                                throw new ArithmeticException("Division by zero");
+                            }
+                            else
+                            {
+                                division();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("NO SUCH OPERATION");
+                        }
+                    }
+
+                }
+
+
+                catch (Exception exception)
+                {
+                    Console.WriteLine(
+                        $"Unexpected error:  { exception.Message }");
+
+                }
+                int addition()
+                {
+                    result = firstnumber + secondnumber;
+                    Console.WriteLine("SUM IS : " + result);
+                    return result;
+                }
+                int substraction()
+                {
+                    result = firstnumber - secondnumber;
+                    Console.WriteLine("DIFFERENCE IS : " + result);
+                    return result;
+                }
+                int multiplication()
+                {
+                    result = firstnumber * secondnumber;
+                    Console.WriteLine("PRODUCT IS : " + result);
+                    return result;
+                }
+                int division()
+                {
+                    result = firstnumber / secondnumber;
+                    Console.WriteLine("QUOTIENT IS : " + result);
+                    return result;
+                }
+
+            }
+            i = false;
+
+            }
+        
+    }
+}
