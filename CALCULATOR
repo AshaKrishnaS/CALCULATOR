@@ -2,7 +2,7 @@ using System;
 
 namespace calculator_app
 {
-    class Program
+    class CalculatorOperation
     {
 
         static void Main(string[] args)
