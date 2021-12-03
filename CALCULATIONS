@@ -6,11 +6,10 @@ namespace calculator_app
 {
     class Calculator
     {
-
-        
-
-            public void calculation()
-            {
+        int firstnumber, secondnumber, result;
+       
+        public void calculation()
+        {
            
             bool i = true;
             while (i)
@@ -18,14 +17,8 @@ namespace calculator_app
                 Console.WriteLine("CALCULATOR");
                 Console.WriteLine("____________________________________");
 
-                int firstnumber, secondnumber, result;
-                Console.WriteLine("ENTER FIRST NUMBER");
-                firstnumber = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("ENTER SECOND NUMBER");
-                secondnumber = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("____________________________________");
-
+                
+                
                 Console.WriteLine(" CHOOSE AN OPERATION");
 
                 Console.WriteLine("0.EXIT");
@@ -35,12 +28,12 @@ namespace calculator_app
                 Console.WriteLine("4.DIVISION");
                 Console.WriteLine("5.CLEAR");
 
+               
+
                 try
                 {
-                    int operation = Convert.ToInt32(Console.ReadLine());
-
+                    int operation =Int32.Parse((Console.ReadLine()));
                     
-
                     if (operation == 0)
                     {
                         Environment.Exit(0);
@@ -50,8 +43,15 @@ namespace calculator_app
                     {
                         Console.Clear();
                     }
+                   
+                    //Console.WriteLine("____________________________________");
+
                     else
                     {
+                        Console.WriteLine("ENTER FIRST NUMBER");
+                        firstnumber =Int32.Parse((Console.ReadLine()));
+                        Console.WriteLine("ENTER SECOND NUMBER");
+                        secondnumber =Int32.Parse((Console.ReadLine()));
 
                         if (operation == 1)
                         {
@@ -86,41 +86,42 @@ namespace calculator_app
                 }
 
 
-                catch (Exception exception)
+                catch (Exception )
                 {
-                    Console.WriteLine(
-                        $"Unexpected error:  { exception.Message }");
+                    
+                    Console.WriteLine("PLEASE ENTER A VALID INTEGER");
 
                 }
-                int addition()
-                {
-                    result = firstnumber + secondnumber;
-                    Console.WriteLine("SUM IS : " + result);
-                    return result;
-                }
-                int substraction()
-                {
-                    result = firstnumber - secondnumber;
-                    Console.WriteLine("DIFFERENCE IS : " + result);
-                    return result;
-                }
-                int multiplication()
-                {
-                    result = firstnumber * secondnumber;
-                    Console.WriteLine("PRODUCT IS : " + result);
-                    return result;
-                }
-                int division()
-                {
-                    result = firstnumber / secondnumber;
-                    Console.WriteLine("QUOTIENT IS : " + result);
-                    return result;
-                }
+                
 
             }
             i = false;
 
-            }
-        
+        }
+        int addition()
+        {
+            result = firstnumber + secondnumber;
+            Console.WriteLine("SUM IS : " + result);
+            return result;
+        }
+        int substraction()
+        {
+            result = firstnumber - secondnumber;
+            Console.WriteLine("DIFFERENCE IS : " + result);
+            return result;
+        }
+        int multiplication()
+        {
+            result = firstnumber * secondnumber;
+            Console.WriteLine("PRODUCT IS : " + result);
+            return result;
+        }
+        int division()
+        {
+            result = firstnumber / secondnumber;
+            Console.WriteLine("QUOTIENT IS : " + result);
+            return result;
+        }
+
     }
 }
